@@ -1,0 +1,20 @@
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   8 months ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   8 months ago   15.7MB
+
+okotajarvi@tiepskari:~/Dev/devopswithdocker/part1$ docker run -d -it --name alpine devopsdockeruh/simple-web-service:alpine
+db8c4b785ab789e542c975fb3fdcac4106f9b81c9fda0ad221282f9b2b0baa68
+time="2021-11-22T21:15:41.927051600+02:00" level=info msg="starting signal loop" namespace=moby path=/run/docker/containerd/daemon/io.containerd.runtime.v2.task/moby/db8c4b785ab789e542c975fb3fdcac4106f9b81c9fda0ad221282f9b2b0baa68 pid=4169
+okotajarvi@tiepskari:~/Dev/devopswithdocker/part1$ docker exec -it alpine sh
+/usr/src/app # tail -f ./text.log
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-11-22 19:15:52 +0000 UTC
+2021-11-22 19:15:54 +0000 UTC
+2021-11-22 19:15:56 +0000 UTC
+2021-11-22 19:15:58 +0000 UTC
+2021-11-22 19:16:00 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-11-22 19:16:02 +0000 UTC
+2021-11-22 19:16:04 +0000 UTC
+2021-11-22 19:16:06 +0000 UTC
+^C
+/usr/src/app # exit

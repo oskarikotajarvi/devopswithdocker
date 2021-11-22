@@ -1,0 +1,18 @@
+okotajarvi@tiepskari:~/Dev/devopswithdocker/part1$ docker run -d -it --name secret devopsdockeruh/simple-web-service:ubuntu
+7be75280f82d06d9b6a73e199fefa92259a1cb6fb27a524a6aa8b29d32bd703e
+okotajarvi@tiepskari:~/Dev/devopswithdocker/part1$ docker exec -it secret bash
+root@7be75280f82d:/usr/src/app# tail -f ./text.log
+2021-11-22 18:13:41 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-11-22 18:13:43 +0000 UTC
+2021-11-22 18:13:45 +0000 UTC
+2021-11-22 18:13:47 +0000 UTC
+2021-11-22 18:13:49 +0000 UTC
+2021-11-22 18:13:51 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2021-11-22 18:13:53 +0000 UTC
+2021-11-22 18:13:55 +0000 UTC
+2021-11-22 18:13:57 +0000 UTC
+^C
+root@7be75280f82d:/usr/src/app# exit
+exit

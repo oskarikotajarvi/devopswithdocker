@@ -1,0 +1,15 @@
+okotajarvi@tiepskari:~/Dev/devopswithdocker/part1/1.8$ docker run -d -it fromscript:curler
+1a0c9d9f6d214c926583133863d7683c13dbb82ccf97b054c5b1494dc8468dd2
+okotajarvi@tiepskari:~/Dev/devopswithdocker/part1/1.8$ docker ps -a
+CONTAINER ID   IMAGE                                      COMMAND                  CREATED          STATUS                       PORTS     NAMES
+1a0c9d9f6d21   fromscript:curler                          "/bin/sh -c ./inputs…"   22 seconds ago   Up 21 seconds                          interesting_mcnulty
+okotajarvi@tiepskari:~/Dev/devopswithdocker/part1/1.8$ docker attach interesting_mcnulty
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="https://www.helsinki.fi/">here</a>.</p>
+</body></html>
