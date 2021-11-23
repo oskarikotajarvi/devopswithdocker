@@ -1,0 +1,17 @@
+# Golang image
+FROM golang:1.16.10-buster
+# Working directory
+WORKDIR /usr/src/app
+# Environment variables
+ENV PORT=8080
+ENV REQUEST_ORIGIN=http://localhost:5000
+# Expose port
+EXPOSE 8080
+# Copy the application
+COPY . .
+# Build the binary
+RUN go build
+# Run tests
+RUN go test ./...
+# CMD
+CMD ["./server"]
