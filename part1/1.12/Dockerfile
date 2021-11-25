@@ -18,5 +18,3 @@ RUN npm run build
 
 # CMD
 CMD ["serve", "-s", "-l", "5000", "build"]
-
-
