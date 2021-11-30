@@ -27,7 +27,7 @@ services:
       - db
 
   frontend:
-    build: ./example-frontend/
+    build: ./example-frontend/ # Did this inside the material-exercises git directory
     ports:
       - 5000:5000
-    container_name: example_frontend # Did this inside the material-exercises git directory
+    container_name: example_frontend
