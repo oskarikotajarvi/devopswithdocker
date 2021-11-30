@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  redis:
+    image: redis:latest
+    restart: unless-stopped
+    container_name: redis_host
+    ports:
+      - 6379:6379
+  backend:
+    build: ./example-backend/ # Did this inside the material-exercises git directory
+    ports:
+      - 8080:8080
+    container_name: example_backend
+  frontend:
+    build: ./example-frontend/
+    ports:
+      - 5000:5000
+    container_name: example_frontend # Did this inside the material-exercises git directory
