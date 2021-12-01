@@ -6,4 +6,6 @@
     - Did this because in the future there might be a docker-compose for example for other environments than dev, or different compose files to just run backend / frontend.
     - Needs to be launched with command `docker-compose -f docker-compose-dev.yml`
 
+Repo for the project in question can be found [here](https://github.com/oskarikotajarvi/express-hello-world)
+
 Thought about creating a more complex setup with nginx, database etc, but as mentioned couldn't do it in a timely manner.
