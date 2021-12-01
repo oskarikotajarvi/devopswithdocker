@@ -1,0 +1,66 @@
+version: '3.5'
+
+services:
+  proxy:
+    image: nginx:stable
+    restart: unless-stopped
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    environment:
+      - NGINX_PORT=80
+    networks:
+      - example-network
+    ports:
+      - 80:80
+
+  redis:
+    image: redis:latest
+    restart: unless-stopped
+    container_name: redis_host
+    volumes:
+      - ./redis_db:/data
+    ports:
+      - 6379:6379
+    networks:
+      - example-network
+
+  db:
+    image: postgres:13.2-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: verysecret
+    container_name: db_postgres
+    volumes:
+      - ./database:/var/lib/postgresql/data
+    networks:
+      - example-network
+
+  backend:
+    build: ./example-backend/ # Did this inside the material-exercises git directory
+    ports:
+      - 8080:8080
+    environment:
+      - POSTGRES_HOST=db_postgres
+      - POSTGRES_PASSWORD=verysecret
+      - REDIS_HOST=redis_host
+      - REQUEST_ORIGIN=http://localhost
+      - PORT=8080
+    container_name: example_backend
+    depends_on:
+      - db
+    networks:
+      - example-network
+
+  frontend:
+    build: ./example-frontend/ # Did this inside the material-exercises git directory
+    ports:
+      - 5000:5000
+    environment:
+      - REACT_APP_BACKEND=http://localhost
+    container_name: example_frontend
+    networks:
+      - example-network
+
+networks:
+  example-network:
+    name: example-network
