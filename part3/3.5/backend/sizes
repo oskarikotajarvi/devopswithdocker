@@ -1,0 +1,5 @@
+There is not much to say here as I did the switch to alpine by accident in 3.4.
+The whole image size after the switch to alpine was 824MB
+
+As mentioned in the 3.4 submission I have (luckily / mistakenly) been using the golang image instead of the ubuntu image
+for the whole course since part1.

@@ -1,0 +1,16 @@
+Before modifications:
+1.01GB
+ - I have used the golang:1.16.10-buster image since part1 of this course so image size is reflected from that
+
+After combining RUN:
+1.01GB
+ - After combining the RUN command, the size is still pretty much the same for the whole image.
+ - This seems to be caused because of the golang image installing alot of unnecessary stuff..
+
+ After some other modifications:
+ - even after removing alot of the files, installations etc, the size still reports as 1.01GB
+ - Next step I would take is to just switch the buster image to alpine.
+ - After changing the image to alpine and manually installing needed dependencies the size dropped to 824MB. This is withouth deleting unneeded
+    build stuff after building.
+    - I know realize that the alpine switch is actually the next part of the course...
+ - After removing the build-essentials package after building, the size dropped to 645MB

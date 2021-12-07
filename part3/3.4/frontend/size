@@ -1,0 +1,7 @@
+Size before any changes: 1.17GB
+    - I have also used the node:14 image for this since part1
+After combining run to a single line: 1.17GB
+    - It seems that there is a similar problem that we have with the backend image
+    - The node image seems to install alot of unnecessary clutter and looking at removing all of it is unnecessary work
+    - As I noticed that switching to the alpine image is done in later excercises, I won't do it in this one and instead
+        move the implementation of that to the next excercise. So unfortunately the imagesize of this run stays the same :(...
