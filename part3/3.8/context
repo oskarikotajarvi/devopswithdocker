@@ -1,0 +1,5 @@
+The diagram is for a adhoc social media platform.
+- A web application
+- A authentication API that handles all authentication and user information
+- A backend API (pretty generally named here) that handles everyday requests such as adding, deleting, modifying etc posts
+- SQL server that hosts the data
